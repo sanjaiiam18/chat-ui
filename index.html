@@ -6,72 +6,94 @@
   <title>Chat UI</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-slate-100 h-screen flex">
 
-<body class="bg-slate-950 text-slate-200 min-h-screen flex">
-
-  <!-- SIDEBAR -->
-  <aside class="w-80 bg-slate-900 border-r border-white/10 flex flex-col">
-    <div class="p-6 border-b border-white/10">
-      <h1 class="text-xl font-bold">ChatAPP</h1>
-      <p class="text-sm text-slate-400">Chating application</p>
+  <!-- Sidebar -->
+  <aside class="w-80 bg-white border-r hidden md:flex flex-col">
+    <div class="p-4 border-b font-semibold text-lg">
+      ChatUI
     </div>
 
-    <div class="flex-1 overflow-y-auto">
-      <div class="px-6 py-4 bg-white/10 cursor-pointer">
-        <p class="font-medium">Navaneth</p>
-        <p class="text-xs text-slate-400">Typing...</p>
-      </div>
+    <!-- Search -->
+    <div class="p-3">
+      <input
+        type="text"
+        placeholder="Search"
+        class="w-full px-4 py-2 rounded-lg bg-slate-100 outline-none"
+      />
+    </div>
 
-      <div class="px-6 py-4 hover:bg-white/5 cursor-pointer">
-        <p class="font-medium">Nath Ali Khan</p>
-        <p class="text-xs text-slate-400">See you soon</p>
+    <!-- Chat List -->
+    <div class="flex-1 overflow-y-auto">
+      <div class="flex items-center gap-3 p-4 hover:bg-slate-100 cursor-pointer">
+       
+
+      <div class="flex items-center gap-3 p-4 bg-slate-100 cursor-pointer">
+        <div class="w-10 h-10 rounded-full bg-green-500"></div>
+        <div class="flex-1">
+          <p class="font-medium">Mom</p>
+          <p class="text-sm text-gray-500 truncate">
+            Hello how was your day?
+          </p>
+        </div>
+        <span class="text-xs text-gray-400">09:10</span>
       </div>
     </div>
   </aside>
 
-  <!-- CHAT -->
+  <!-- Chat Area -->
   <main class="flex-1 flex flex-col">
 
-    <!-- HEADER -->
-    <header class="px-6 py-4 border-b border-white/10">
-      <p class="font-medium">Nath</p>
-      <p class="text-xs text-green-400">Online</p>
+    <!-- Chat Header -->
+    <header class="h-16 bg-white border-b flex items-center px-5 gap-3">
+      <div class="w-10 h-10 rounded-full bg-green-500"></div>
+      <div>
+        <p class="font-semibold">Mom</p>
+        <p class="text-xs text-green-500">online</p>
+      </div>
     </header>
 
-    <!-- MESSAGES -->
-    <section class="flex-1 p-6 space-y-4 overflow-y-auto">
+    <!-- Messages -->
+    <section class="flex-1 overflow-y-auto p-5 space-y-4 bg-slate-50">
 
+      <!-- Received -->
       <div class="flex">
-        <div class="bg-slate-800 px-4 py-2 rounded-lg max-w-md">
-          Hey, did you check the new UI?
+        <div class="max-w-md bg-white px-4 py-2 rounded-2xl rounded-tl-none shadow">
+          <p class="text-sm">
+            Hey!
+          </p>
+          <span class="text-xs text-gray-400 block mt-1">09:08</span>
         </div>
       </div>
 
+      <!-- Sent -->
       <div class="flex justify-end">
-        <div class="bg-blue-600 px-4 py-2 rounded-lg max-w-md">
-          Yes! It looks super clean 🔥
+        <div class="max-w-md bg-blue-500 text-white px-4 py-2 rounded-2xl rounded-tr-none shadow">
+          <p class="text-sm">
+             Hello, how was your day?
+          </p>
+          <span class="text-xs text-blue-200 block mt-1 text-right">
+            09:10 ✓✓
+          </span>
         </div>
       </div>
 
-      <div class="flex">
-        <div class="bg-slate-800 px-4 py-2 rounded-lg max-w-md">
-          Let’s ship it soon.
-        </div>
-      </div>
+    
 
     </section>
 
-    <!-- INPUT -->
-    <footer class="p-4 border-t border-white/10">
-      <div class="flex gap-4">
-        <input
-          class="flex-1 px-4 py-3 rounded-md bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Type a message..."
-        />
-        <button class="px-6 py-3 bg-blue-600 rounded-md hover:bg-blue-700">
-          Send
-        </button>
-      </div>
+    <!-- Input -->
+    <footer class="h-16 bg-white border-t flex items-center px-4 gap-3">
+      <input
+        type="text"
+        placeholder="Type a message..."
+        class="flex-1 px-4 py-2 rounded-full bg-slate-100 outline-none"
+      />
+      <button
+        class="bg-blue-500 text-white px-5 py-2 rounded-full font-medium hover:bg-blue-600 transition"
+      >
+        Send
+      </button>
     </footer>
 
   </main>
